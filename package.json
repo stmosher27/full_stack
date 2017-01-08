@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "./node_modules/.bin/webpack"
+    "postinstall": "webpack"
   },
   "keywords": [],
   "author": "",
@@ -26,5 +26,17 @@
   "engines": {
     "node": "6.2.1",
     "npm": "3.9.3"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stmosher27/full_stack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stmosher27/full_stack/issues"
+  },
+  "homepage": "https://github.com/stmosher27/full_stack#readme"
 }
