@@ -1,18 +1,18 @@
 <h1>Trail Gram</h1>
 Heroku Link: https://trail-gram.herokuapp.com/
 
-<h2>Minimum Viable Product</h2>
+##Minimum Viable Product
 TrailGram is a web application using Ruby on Rails and React/Redux that shares similar functionality as Instagram.  By the end of this full stack project,
 this app will satisfy the following features.
 <br>
 <br>
-<ul>
-  <li>Hosting on Heroku</li>
-  <li>Posting Images</li>
-  <li>Likes</li>
-  <li>Commenting on Images</li>
-  <li>Following & Photo Feed</li>
-</ul>
+
+-  [ ] Hosting on Heroku
+-  [ ] Posting Images
+-  [ ] Likes
+-  [ ]Commenting on Images
+-  [ ]Following & Photo Feed
+
 <h2>Design Docs</h2>
 <ul>
   <li>[View Wireframes](./Wireframes)</li>

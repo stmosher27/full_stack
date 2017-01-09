@@ -24,13 +24,13 @@
           poster_id: 12,
           poster_username
         }
-        likes: 111,
-        comments: {
-          1: {id: 1, poster_id: 12, poster_username: 'jim', body: 'where?'},
-          2: {....}
-        }
+        likes: 111
       }
     },
+    comments: {
+      1: {id: 1, poster_id: 12, poster_username: 'jim', body: 'where?'},
+      2: {....}
+    }
     searchResult: [{username: "billy", id: 10}],
     errors: {
       signUp: [],
