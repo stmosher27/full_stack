@@ -28,10 +28,20 @@ this app will satisfy the following features.
 
 <h2>Implementation Timeline</h2>
 
-<h5>Phase 1: Backend setup and Front End User Authentication</h5>
+<h5>Phase 1: Backend setup and Front End User Authentication (2 days)</h5>
 Objective: Create a new functioning rails project with front-end authentication
 
-<h5>Phase 2:
+<h5>Phase 2: Posts (2 days)</h5>
+Objective: Create, delete and edit posts
+
+<h5>Phase 3: Likes (2 days)</h5>
+Objective: Create and delete likes for specific posts
+
+<h5>Phase 4: Comments (2 days)</h5>
+Objective: Create, delete and edit comments for specific posts
+
+<h5>Phase 5: Follows (2 days)</h5>
+Objective: Create and delete follows for specific user
 
 
 <h3>Bonus Features (TBD)</h3>
