@@ -35,6 +35,6 @@ export const requestSignup = user => dispatch => (
 
 export const requestLogout = () => dispatch => (
   APIUtil.logout().then(
-    () => dispatch(receiveLogoutSuccess())
+    () => dispatch(receiveCurrentUser(null))
   )
 );
