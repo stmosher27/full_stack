@@ -20,15 +20,15 @@
         id: 1,
         description: "sick pic",
         img_url: "pic.com",
-        poster: {
-          poster_id: 12,
-          poster_username
+        author: {
+          author_id: 12,
+          author_username
         }
         likes: 111
       }
     },
     comments: {
-      1: {id: 1, poster_id: 12, poster_username: 'jim', body: 'where?'},
+      1: {id: 1, author_id: 12, author_username: 'jim', body: 'where?'},
       2: {....}
     }
     searchResult: [{username: "billy", id: 10}],
