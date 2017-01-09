@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { requestLogin, requestLogout, requestSignup } from '../../actions/session_actions';
+import { requestLogin, requestLogout,
+  requestSignup } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 

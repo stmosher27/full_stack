@@ -18,7 +18,6 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       logout
-      render :show
     else
       render json: @user.errors.full_messages, status: 404
     end
