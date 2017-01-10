@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
 		e.preventDefault();
 		const user = this.state;
 		this.props.processForm(user).then(
-      this.props.router.push('/'));
+      () => this.props.router.push('/'));
 	}
 
 	navLink() {
@@ -55,9 +55,6 @@ class SessionForm extends React.Component {
 		return (
 			<div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					Welcome to BenchBnB!
-					<br/>
-					Please {this.props.formType} or {this.navLink()}
 					{this.renderErrors()}
 					<div className="login-form">
 						<br/>
