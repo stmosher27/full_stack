@@ -21,19 +21,19 @@ export const receiveErrors = errors => ({
   errors
 });
 
-export const requestLogin = user => dispatch => (
+export const login = user => dispatch => (
   APIUtil.login(user).then(
     currentUser => dispatch(receiveCurrentUser(currentUser))
   ).fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
-export const requestSignup = user => dispatch => (
+export const signup = user => dispatch => (
   APIUtil.signup(user).then(
     currentUser => dispatch(receiveCurrentUser(currentUser))
   ).fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
-export const requestLogout = () => dispatch => (
+export const logout = () => dispatch => (
   APIUtil.logout().then(
     () => dispatch(receiveCurrentUser(null))
   )

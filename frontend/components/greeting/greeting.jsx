@@ -4,7 +4,9 @@ import { hashHistory } from 'react-router';
 
 const sessionLinks = () => (
   <nav className="login-signup">
+    guide
     <Link to='/login' activeClassName="current">Login</Link>
+    <br/>
     <Link to="/signup" activeClassName="current">Sign up</Link>
   </nav>
 );
