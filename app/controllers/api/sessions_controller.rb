@@ -5,7 +5,6 @@ class Api::SessionsController < ApplicationController
       params[:user][:username],
       params[:user][:password]
     )
-
     if @user
       login(@user)
       render :show
@@ -16,10 +15,7 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     @user = current_user
-    if @user
-      logout
-    else
-      render json: @user.errors.full_messages, status: 404
-    end
+    logout
+    render json: @user.errors.full_messages, status: 404
   end
 end

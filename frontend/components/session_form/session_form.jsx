@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router';
 class SessionForm extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { username: "", password: "" };
+		this.state = { username: "", email: "",password: "" };
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
@@ -27,7 +27,8 @@ class SessionForm extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		const user = this.state;
-		this.props.processForm({user});
+		this.props.processForm(user).then(
+      this.props.router.push('/'));
 	}
 
 	navLink() {
