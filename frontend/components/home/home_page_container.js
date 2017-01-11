@@ -5,10 +5,6 @@ import HomePage from './home_page';
 const mapStateToProps = ({ session }) => ({
   loggedIn: Boolean(session.currentUser),
   currentUser: session.currentUser,
-  // username: session.currentUser.username,
-  // email: session.currentUser.email,
-  // name: session.currentUser.name,
-  // errors: session.errors
 });
 
 const mapDispatchToProps = dispatch => ({

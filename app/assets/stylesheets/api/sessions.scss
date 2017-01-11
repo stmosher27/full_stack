@@ -11,6 +11,12 @@ html, body {
   min-width: 400px;
 }
 
+@media screen and (max-height: 630px) {
+  .footer{
+    display: none;
+  }
+}
+
 @media screen and (max-width: 730px) {
     .login-img{
         display: none;
@@ -70,33 +76,6 @@ div {
   text-decoration: none;
   color: #1E90FF;
   margin-left: 3px;
-}
-
-.footer {
-  position: fixed;
-  left: 0px;
-  bottom: 0px;
-  height: 40px;
-  width: 100%;
-}
-
-.footer-details {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  color: grey;
-  width: 100%;
-}
-
-.linked-img {
-  height: 30px;
-  width: 30px;
-}
-
-.git-img {
-  height: 30px;
-  width: 30px;
 }
 
 .login-link {

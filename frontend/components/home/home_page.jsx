@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { withRouter } from 'react-router';
+import Header from '../header/header';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class HomePage extends React.Component {
   render() {
     return(
       <div>
+        <Header />
         <h2>Hi!</h2>
         <button onClick={this.handleSubmit}>Log Out</button>
       </div>

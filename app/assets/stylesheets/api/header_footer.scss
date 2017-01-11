@@ -1,0 +1,58 @@
+.footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 40px;
+  width: 100%;
+}
+
+
+.footer-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: grey;
+  width: 100%;
+}
+
+.header {
+  position: fixed;
+  left: 0px;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid grey;
+}
+
+
+.header-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.header-title {
+  font-family: cursive;
+  font-size: 18px;
+}
+
+
+
+.logo {
+  height: 40px;
+  width: 40px;
+}
+
+.linked-img {
+  height: 30px;
+  width: 30px;
+}
+
+.git-img {
+  height: 30px;
+  width: 30px;
+}
