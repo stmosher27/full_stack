@@ -4,6 +4,14 @@ import { withRouter } from 'react-router';
 class Header extends React.Component {
   constructor(props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.logout().then(
+      () => this.props.router.push('/login'));
   }
 
   render() {
@@ -15,8 +23,8 @@ class Header extends React.Component {
         <div className="header-details">
           <label className="header-title">Trailgram</label>
         </div>
-        <div>
-
+        <div className="header-details">
+          <button onClick={this.handleSubmit}><img className="logout-pic" src="https://image.freepik.com/free-icon/door-exit_318-48444.jpg" alt="logout"/></button>
         </div>
 
       </div>
