@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
 		super(props);
 		this.state = { email: "", username: "", name: "", password: "" };
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.guestLogin = this.guestLogin.bind(this);
 	}
 
 	componentDidUpdate() {
@@ -28,7 +29,18 @@ class SessionForm extends React.Component {
 		e.preventDefault();
 		const user = this.state;
 		this.props.processForm(user).then(
-      () => this.props.router.push('/'));
+      () => this.props.router.push('/home'));
+	}
+
+	guestLogin(e) {
+		e.preventDefault();
+		this.state.username = "guest";
+		this.state.password = "password";
+		const user = this.state;
+		this.props.processForm(user).then(
+			() => this.props.router.push('/home')
+		);
+
 	}
 
 
@@ -49,7 +61,7 @@ class SessionForm extends React.Component {
 			return (
 				<div className="login-form-container">
 					<div className="login-img">
-						<img src="http://img06.deviantart.net/e46f/i/2012/185/0/2/old_camera_by_azheenfuad-d55xgdl.jpg" alt="pic"/>
+						<img className="login-pic" src="http://img06.deviantart.net/e46f/i/2012/185/0/2/old_camera_by_azheenfuad-d55xgdl.jpg" alt="pic"/>
 					</div>
 					<form onSubmit={this.handleSubmit} >
 						{this.renderErrors()}
@@ -69,6 +81,7 @@ class SessionForm extends React.Component {
 									className="login-input" />
 							<br/>
 							<input type="submit" className="button"value="Log In" />
+							<button className="button" onClick={this.guestLogin}>Guest Log In</button>
 						</div>
 						<div className="login-link">
 							Don't have an account?
@@ -80,7 +93,7 @@ class SessionForm extends React.Component {
 				return(
 					<div className="signup-form-container">
 						<div className="login-img">
-							<img src="http://img06.deviantart.net/e46f/i/2012/185/0/2/old_camera_by_azheenfuad-d55xgdl.jpg" alt="pic"/>
+							<img className="login-pic" src="http://img06.deviantart.net/e46f/i/2012/185/0/2/old_camera_by_azheenfuad-d55xgdl.jpg" alt="pic"/>
 						</div>
 						<form onSubmit={this.handleSubmit}>
 							{this.renderErrors()}

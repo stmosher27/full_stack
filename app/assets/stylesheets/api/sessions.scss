@@ -8,6 +8,13 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 400px;
+}
+
+@media screen and (max-width: 730px) {
+    .login-img{
+        display: none;
+    }
 }
 
 div {
@@ -15,10 +22,10 @@ div {
   justify-content: center;
 }
 
-img {
-  height: 400px;
-  width: 400px;
-  padding: 10px;
+.login-pic {
+  height: 450px;
+  width: 450px;
+  padding-right: 10px;
   border-radius: 25px;
   margin: 5px;
 }
@@ -38,6 +45,7 @@ img {
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .title {
@@ -55,7 +63,7 @@ img {
   flex-direction: column;
   background-color: white;
   border-radius: 5px;
-  border: 1px solid grey;
+  border: 1px solid #F0FFFF;
 }
 
 .curr-link {
@@ -67,7 +75,7 @@ img {
 .footer {
   position: fixed;
   left: 0px;
-  bottom: 40px;
+  bottom: 0px;
   height: 40px;
   width: 100%;
 }
@@ -96,6 +104,6 @@ img {
   padding: 10px;
   margin-top: 15px;
   border-radius: 5px;
-  border: 1px solid grey;
+  border: 1px solid #F0FFFF;
   font-size: 12px;
 }
