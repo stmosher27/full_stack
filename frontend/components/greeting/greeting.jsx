@@ -1,20 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { hashHistory } from 'react-router';
+import SessionFormContainer from '../session_form/session_form_container';
 
 const sessionLinks = () => (
-  <nav className="login-signup">
-    <Link to='/login' activeClassName="current">Login</Link>
-    <br/>
-    <Link to="/signup" activeClassName="current">Sign up</Link>
-  </nav>
+  <div>
+    hello
+  </div>
 );
 
 const personalGreeting = (currentUser, logout) => (
-	<hgroup className="header-group">
-    <h2 className="header-name">Hi, {currentUser.email}!</h2>
-    <button className="header-button" onClick={logout}>Log Out</button>
-	</hgroup>
+	<div>
+    <h2>Hi, {currentUser.email}!</h2>
+    <button onClick={logout}>Log Out</button>
+	</div>
 );
 
 const Greeting = ({ currentUser, logout }) => (

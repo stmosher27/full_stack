@@ -1,3 +1,101 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #F0F8FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  height: 400px;
+  width: 400px;
+  padding: 10px;
+  border-radius: 25px;
+  margin: 5px;
+}
+
+.signup-desc {
+  padding: 0 20px 10px 20px;
+  text-align: center;
+  color: grey;
+  font-size: 14px;
+}
+
+.button {
+  color: white;
+  background-color: #1E90FF;
+  display: block;
+  width: 55%;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.title {
+  padding-bottom: 30px;
+  font-family: cursive;
+  font-size: xx-large;
+}
+
+
+.login-form {
+  height: 100%;
+  width: 240px;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.curr-link {
+  text-decoration: none;
+  color: #1E90FF;
+  margin-left: 3px;
+}
+
+.footer {
+  position: fixed;
+  left: 0px;
+  bottom: 40px;
+  height: 40px;
+  width: 100%;
+}
+
+.footer-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: grey;
+  width: 100%;
+}
+
+.linked-img {
+  height: 30px;
+  width: 30px;
+}
+
+.git-img {
+  height: 30px;
+  width: 30px;
+}
+
+.login-link {
+  background-color: white;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  font-size: 12px;
+}

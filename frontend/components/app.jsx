@@ -1,11 +1,11 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
+import Footer from './footer';
 
 const App = ({ children }) => (
   <div>
-    <h1>TrailGram</h1>
-    <GreetingContainer />
-    { children }
+    {children}
+    <Footer />
   </div>
 );
 
