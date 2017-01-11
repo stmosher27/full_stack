@@ -13,6 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-@import "api/header_footer.scss";
-@import "reset.css";
