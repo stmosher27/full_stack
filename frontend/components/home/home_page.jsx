@@ -15,13 +15,21 @@ class HomePage extends React.Component {
   }
 
   render() {
-    return(
-      <div>
-        <Header />
-        <h2>Hi!</h2>
-        <button onClick={this.handleSubmit}>Log Out</button>
-      </div>
-    );
+    if (this.props.currentUser) {
+      return(
+        <div>
+          <Header />
+          <h2>Hi, {this.props.currentUser.username}!</h2>
+          <button onClick={this.handleSubmit}>Log Out</button>
+        </div>
+      );
+    } else {
+      return(
+        <div>
+
+        </div>
+      );
+    }
   }
 }
 

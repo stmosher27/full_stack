@@ -13,6 +13,12 @@ class SessionForm extends React.Component {
 		this.redirectIfLoggedIn();
 	}
 
+	componentWillReceiveProps(newProps) {
+		if (this.props.formType !== newProps.formType) {
+			this.setState({username: "", password: "", name: "", email: ""}, () => this.props.clearErrors());
+		}
+	}
+
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
 			this.props.router.push("/");
@@ -64,7 +70,6 @@ class SessionForm extends React.Component {
 						<img className="login-pic" src="http://img06.deviantart.net/e46f/i/2012/185/0/2/old_camera_by_azheenfuad-d55xgdl.jpg" alt="pic"/>
 					</div>
 					<form onSubmit={this.handleSubmit} >
-						{this.renderErrors()}
 						<div className="login-form">
 							<label className="title">Trailgram</label>
 							<br/>
@@ -80,6 +85,7 @@ class SessionForm extends React.Component {
 									onChange={this.update("password")}
 									className="login-input" />
 							<br/>
+							<div className="login-errors">{this.renderErrors()}</div>
 							<input type="submit" className="button"value="Log In" />
 							<button className="button" onClick={this.guestLogin}>Guest Log In</button>
 						</div>
@@ -96,7 +102,6 @@ class SessionForm extends React.Component {
 							<img className="login-pic" src="http://img06.deviantart.net/e46f/i/2012/185/0/2/old_camera_by_azheenfuad-d55xgdl.jpg" alt="pic"/>
 						</div>
 						<form onSubmit={this.handleSubmit}>
-							{this.renderErrors()}
 							<div className="login-form">
 								<label className="title">Trailgram</label>
 								<p className="signup-desc">
@@ -127,6 +132,7 @@ class SessionForm extends React.Component {
 										onChange={this.update("password")}
 										className="login-input" />
 								<br/>
+								<div className="login-errors">{this.renderErrors()}</div>
 								<input type="submit" className="button" value="Sign Up" />
 							</div>
 							<div className="login-link">
