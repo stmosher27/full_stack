@@ -63,7 +63,7 @@ class SessionForm extends React.Component {
 	}
 
 	render() {
-		if (this.props.formType === 'login') {
+		if (this.props.formType !== 'signup') {
 			return (
 				<div className="login-form-container">
 					<div className="login-img">
