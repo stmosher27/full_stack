@@ -11,25 +11,21 @@ class Profile extends React.Component {
     if (this.props.currentUser) {
       return(
         <div className="profile-page">
-          <Header logout={this.props.logout}/>
-          <div className="profile-username">
-            {this.props.currentUser.username}
-          </div>
-          <div className="profile-postsNum">
+            <Header logout={this.props.logout}/>
+            <div className="profile-username">
+              {this.props.currentUser.username}
+            </div>
+            <div className="profile-details">
+              <label className="details"># of posts</label>
+              <label className="details"># of followers</label>
+              <label className="details"># of following</label>
+            </div>
+            <div className="profile-name">
+              {this.props.currentUser.name}
+            </div>
+            <ul className="user-posts">
 
-          </div>
-          <div className="profile-postsNum">
-
-          </div>
-          <div className="profile-postsNum">
-
-          </div>
-          <div className="profile-name">
-            {this.props.currentUser.name}
-          </div>
-          <ul className="user-posts">
-            
-          </ul>
+            </ul>
         </div>
       );
     } else {

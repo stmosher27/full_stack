@@ -5,22 +5,40 @@
 
 #root .profile-page {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
-  width: 80%;
+  width: 400px;
   height: 100%;
-  padding-top: 110px;
+  padding-top: 100px;
+  padding-left: 40px;
+  border-bottom: 1px solid grey;
+}
+
+@media screen and (max-width: 400px) {
+  .profile-details {
+    display: none;
+  }
 }
 
 .profile-username {
   font-size: 24px;
-  font-weight: bold;
-  font-family: serif;
+  font-family: sans-serif;
+  padding-right: 160px;
+}
+
+.profile-details {
+  padding-top: 8px;
+  padding-left: 15px;
+}
+
+.details {
+  padding-left: 30px;
+  font-size: 13px;
 }
 
 .profile-name {
+  padding: 8px 150px 8px 0;
   font-size: 12px;
-  font-weight: bold;
-  padding-top: 50px;
   font-family: sans-serif;
+  font-weight: bold;
 }
