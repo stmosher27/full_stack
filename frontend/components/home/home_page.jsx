@@ -14,6 +14,7 @@ class HomePage extends React.Component {
           <Header logout={this.props.logout}/>
           <ul className="placeholder">
             HI FROM THE INDEX PAGE!
+            <input type="submit" value="Post Image" />
           </ul>
         </div>
       );
