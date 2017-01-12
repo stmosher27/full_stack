@@ -22,12 +22,21 @@ const Root = ({ store }) => {
     }
   };
 
+  const _redirectHome = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (currentUser) {
+      replace('/home');
+    } else {
+      replace('/login');
+    }
+  };
+
   return(
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={SessionFormContainer}
-                 onEnter={_redirectIfLoggedIn}/>
+                 onEnter={_redirectHome}/>
           <Route path="/login" component={SessionFormContainer}
                  onEnter={_redirectIfLoggedIn} />
           <Route path="/signup" component={SessionFormContainer}
