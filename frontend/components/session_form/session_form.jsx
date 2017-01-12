@@ -43,7 +43,6 @@ class SessionForm extends React.Component {
 		this.state.username = "guest";
 		this.state.password = "password";
 		const user = this.state;
-		console.log("processing form");
 		this.props.processForm(user).then(
 			() => this.props.router.push('/home')
 		);

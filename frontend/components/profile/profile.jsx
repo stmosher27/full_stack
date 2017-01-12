@@ -17,8 +17,8 @@ class Profile extends React.Component {
             </div>
             <div className="profile-details">
               <label className="details"># of posts</label>
-              <label className="details"># of followers</label>
-              <label className="details"># of following</label>
+              <label className="details-after"># of followers</label>
+              <label className="details-after"># of following</label>
             </div>
             <div className="profile-name">
               {this.props.currentUser.name}
