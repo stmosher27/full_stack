@@ -12,7 +12,7 @@ class HomePage extends React.Component {
       return(
         <div className="posts">
           <Header logout={this.props.logout}/>
-          <ul>
+          <ul className="placeholder">
             HI FROM THE INDEX PAGE!
           </ul>
         </div>
