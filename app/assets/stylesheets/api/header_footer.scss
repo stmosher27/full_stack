@@ -42,10 +42,13 @@
 }
 
 #logout {
-  display: block;
   padding: 0;
   border: none;
+}
 
+.profile-pic {
+  height: 40px;
+  width: 40px;
 }
 
 .logout-pic {

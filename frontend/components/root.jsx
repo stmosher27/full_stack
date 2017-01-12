@@ -4,6 +4,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import HomePageContainer from './home/home_page_container';
+import ProfileContainer from './profile/profile_container';
 
 const Root = ({ store }) => {
 
@@ -32,6 +33,8 @@ const Root = ({ store }) => {
           <Route path="/signup" component={SessionFormContainer}
                  onEnter={_redirectIfLoggedIn} />
           <Route path="/home" component={HomePageContainer}
+                 onEnter={_ensureLoggedIn} />
+          <Route path="/profile" component={ProfileContainer}
                  onEnter={_ensureLoggedIn} />
         </Route>
       </Router>

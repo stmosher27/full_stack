@@ -10,9 +10,11 @@ class HomePage extends React.Component {
   render() {
     if (this.props.currentUser) {
       return(
-        <div>
+        <div className="posts">
           <Header logout={this.props.logout}/>
-          <h2>Hi, {this.props.currentUser.name}!</h2>
+          <ul>
+            HI FROM THE INDEX PAGE!
+          </ul>
         </div>
       );
     } else {
