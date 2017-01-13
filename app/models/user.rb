@@ -4,6 +4,21 @@ class User < ActiveRecord::Base
   validates :username, length: { minimum: 3 }
   validates :password, length: { minimum: 6 }, allow_nil: :true
 
+  has_many :posts,
+    class_name: "Post",
+    foreign_key: :author_id
+
+  has_many :likes
+
+  has_many :liked_posts,
+	  through: :likes,
+	  source: :post
+
+  has_many :comments,
+    class_name: "Comment",
+    foreign_key: :user_id
+
+
   after_initialize :ensure_session_token
 
   attr_reader :password

@@ -8,11 +8,24 @@
   flex-direction: column;
 }
 
+.post-label{
+  display: flex;
+  justify-content: space-between;
+}
+
 .single-post {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
   margin-top: 50px;
   border: 1px solid grey;
 }
 .post-img {
   height: 400px;
   width: 400px;
+}
+
+.post-desc {
+  justify-content: flex-start;
+  margin-left: 10px;
 }

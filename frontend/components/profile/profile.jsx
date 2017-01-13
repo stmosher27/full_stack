@@ -5,6 +5,37 @@ import Header from '../header/header';
 class Profile extends React.Component {
   constructor(props) {
     super(props);
+
+    this.userPictures = this.userPictures.bind(this);
+    this.selectPosts = this.selectPosts.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.fetchAllPosts();
+  }
+
+  selectPosts(post) {
+    if (post.author_id === this.props.currentUser.id) {
+      return(
+        <ul>
+          <li>
+            <img src={post.img_url} />
+          </li>
+        </ul>
+      );
+    }
+  }
+
+  userPictures() {
+    return(
+      <div className="user-pics">
+        {this.props.posts.reverse().map(post => (
+          <div key={post.id}>
+            {this.selectPosts(post)}
+          </div>
+        ))}
+      </div>
+    );
   }
 
   render() {
@@ -23,9 +54,9 @@ class Profile extends React.Component {
             <div className="profile-name">
               {this.props.currentUser.name}
             </div>
-            <ul className="user-posts">
-
-            </ul>
+            <div className="user-pics">
+              {this.userPictures()}
+            </div>
         </div>
       );
     } else {
