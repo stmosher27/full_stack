@@ -1,12 +1,6 @@
 class Api::PostsController < ApplicationController
   def index
     @posts = Post.all
-    # post_feed = current_user.followings.ids
-    # post_feed << current_user.id
-    # @posts = Post.order('created_at DESC').includes(
-    #   :comments, :author, :likes,
-    #   comments: [:author]).where(
-    #   author_id: post_feed).limit(5)
   end
 
   def create
@@ -24,7 +18,7 @@ class Api::PostsController < ApplicationController
     @posts = Post.order('created_at DESC').includes(
       :comments, :author, :likes,
       comments: [:author]).where(
-      author_id: post_feed).limit(3).offset(params[:offset])
+      author_id: post_feed)
     render :index
   end
 
@@ -51,3 +45,10 @@ class Api::PostsController < ApplicationController
     params.require(:post).permit(:img_url, :description, :author_id)
   end
 end
+
+# post_feed = current_user.followings.ids
+# post_feed << current_user.id
+# @posts = Post.order('created_at DESC').includes(
+#   :comments, :author, :likes,
+#   comments: [:author]).where(
+#   author_id: post_feed).limit(5)

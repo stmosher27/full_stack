@@ -1,6 +1,8 @@
+
 import { connect } from 'react-redux';
 import Posts from './posts';
 import { fetchAllPosts } from '../../actions/post_actions';
+import { like, unlike } from '../../actions/like_actions';
 
 const mapStateToProps = state => {
   return({
@@ -12,7 +14,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return({
-    fetchAllPosts: () => dispatch(fetchAllPosts())
+    fetchAllPosts: () => dispatch(fetchAllPosts()),
+    like: (postId) => dispatch(like(postId)),
+    unlike: (postId) => dispatch(unlike(postId))
   });
 };
 

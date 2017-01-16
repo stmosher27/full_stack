@@ -19,9 +19,12 @@ class Posts extends React.Component {
         <div className="all-posts">
           {this.props.posts.reverse().map(post => (
             <div key={post.id}>
-              <PostItem post={post} />
+              <PostItem post={post}
+                like={this.props.like}
+                unlike={this.props.unlike}
+                currUser={this.props.currentUser}/>
             </div>
-            // <div className="post-comments">
+            // <div className="post-comments">thi
             //   <CommentContainer />
             // </div>
           ))}

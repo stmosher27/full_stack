@@ -1,6 +1,8 @@
 import { RECEIVE_ALL_POSTS } from '../actions/post_actions';
+import { CREATE_LIKE, DELETE_LIKE } from '../actions/like_actions';
 
 import merge from 'lodash/merge';
+
 
 const PostsReducer = ( state = {}, action ) => {
   Object.freeze(state);

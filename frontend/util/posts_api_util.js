@@ -4,3 +4,10 @@ export const fetchAllPosts = () => (
     url: '/api/posts'
   })
 );
+
+export const fetchPost = postId => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/posts/${postId}`,
+  })
+);
