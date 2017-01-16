@@ -8,6 +8,7 @@ class PostItem extends React.Component {
   }
 
   render() {
+    debugger
     return(
       <li className="single-post">
         <label className="post-label">
