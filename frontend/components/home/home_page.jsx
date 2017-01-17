@@ -12,7 +12,7 @@ class HomePage extends React.Component {
     if (this.props.currentUser) {
       return(
         <div className="posts">
-          <Header logout={this.props.logout}/>
+          <Header logout={this.props.logout} currentUser={this.props.currentUser}/>
           <PostsContainer />
         </div>
       );

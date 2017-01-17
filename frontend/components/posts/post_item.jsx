@@ -30,11 +30,13 @@ class PostItem extends React.Component {
   }
 
   render() {
+    const user_profile_url = `/user/${this.props.post.author_id}`;
+
     return(
       <li className="single-post">
         <label className="post-label">
-          <div>
-            {this.props.post.username}
+          <div className="profile-link">
+            <Link to={user_profile_url} >{this.props.post.username}</Link>
           </div>
           <div>
             {this.props.post.published}

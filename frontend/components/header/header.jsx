@@ -18,7 +18,7 @@ class Header extends React.Component {
 
   viewProfile(e) {
     e.preventDefault();
-    this.props.router.push('/profile');
+    this.props.router.push(`/user/${this.props.currentUser.id}`);
   }
 
   viewHome(e) {

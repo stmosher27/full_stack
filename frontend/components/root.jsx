@@ -43,7 +43,7 @@ const Root = ({ store }) => {
                  onEnter={_redirectIfLoggedIn} />
           <Route path="/home" component={HomePageContainer}
                  onEnter={_ensureLoggedIn} />
-          <Route path="/profile" component={ProfileContainer}
+          <Route path="/user/:userId" component={ProfileContainer}
                  onEnter={_ensureLoggedIn} />
         </Route>
       </Router>
