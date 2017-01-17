@@ -4,9 +4,9 @@ export const CREATE_LIKE = 'CREATE_LIKE';
 export const DELETE_LIKE = 'DELETE_LIKE';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
-export const receiveLike = postId => ({
+export const receiveLike = like => ({
   type: CREATE_LIKE,
-  post_id: postId
+  like
 });
 
 export const deleteLike = postId => ({
@@ -21,7 +21,7 @@ export const receiveErrors = errors => ({
 
 export const like = postId => dispatch => (
   APIUtil.createLike(postId).then(
-    postLike => dispatch(receiveLike(postLike))
+    newLike => dispatch(receiveLike(newLike))
   ).fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 

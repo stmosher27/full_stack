@@ -22,6 +22,7 @@ class Posts extends React.Component {
               <PostItem post={post}
                 like={this.props.like}
                 unlike={this.props.unlike}
+                fetchAllPosts={this.props.fetchAllPosts}
                 currUser={this.props.currentUser}/>
             </div>
             // <div className="post-comments">thi

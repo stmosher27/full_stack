@@ -15,12 +15,18 @@ class PostItem extends React.Component {
     let flag = false;
     Object.keys(likes).map((likeId) => {
       if (likes[likeId].user_id === this.props.currUser.id){
-        this.props.unlike(this.props.post.id);
+        this.props.unlike(this.props.post.id).then(
+          this.props.fetchAllPosts(this.props.post.id)
+        );
         flag = true;
       }
     });
-    if (flag === false)
-      this.props.like(this.props.post.id);
+    if (flag === false){
+      this.props.like(this.props.post.id).then(
+        this.props.fetchAllPosts(this.props.post.id)
+      );
+    }
+
   }
 
   render() {
@@ -28,7 +34,7 @@ class PostItem extends React.Component {
       <li className="single-post">
         <label className="post-label">
           <div>
-            author: {this.props.post.author_id}
+            {this.props.post.username}
           </div>
           <div>
             {this.props.post.published}

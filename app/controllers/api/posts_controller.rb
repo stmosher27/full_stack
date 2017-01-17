@@ -13,12 +13,12 @@ class Api::PostsController < ApplicationController
   end
 
   def show
-    post_feed = current_user.followings.ids
-    post_feed << current_user.id
-    @posts = Post.order('created_at DESC').includes(
-      :comments, :author, :likes,
-      comments: [:author]).where(
-      author_id: post_feed)
+    # post_feed = current_user.followings.ids
+    # post_feed << current_user.id
+    # @posts = Post.order('created_at DESC').includes(
+    #   :comments, :author, :likes,
+    #   comments: [:author]).where(
+    #   author_id: post_feed)
     render :index
   end
 
@@ -42,7 +42,7 @@ class Api::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:img_url, :description, :author_id)
+    params.require(:post).permit(:img_url, :description, :author_id, :likes)
   end
 end
 
