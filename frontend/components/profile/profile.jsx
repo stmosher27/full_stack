@@ -18,6 +18,7 @@ class Profile extends React.Component {
 
   userPictures() {
     if (this.props.user.id) {
+      this.props.fetchUser(this.props.params.userId);
       return(
           <ul className="user-pics">
             {this.props.user.posts.map(post => (
@@ -81,7 +82,7 @@ class Profile extends React.Component {
         return(
           <div className="profile-page">
             <div className="prof-info">
-              <Header logout={this.props.logout}/>
+              <Header logout={this.props.logout} />
               <div className="profile-username">
                 {this.props.currentUser.username}
               </div>
@@ -104,7 +105,7 @@ class Profile extends React.Component {
           return(
             <div className = "profile-page">
               <div className="prof-info">
-                <Header logout={this.props.logout}/>
+                <Header logout={this.props.logout} currentUser={this.props.currentUser}/>
                 <div className="profile-username">
                   {this.props.user.username}
                   <div className="follow">

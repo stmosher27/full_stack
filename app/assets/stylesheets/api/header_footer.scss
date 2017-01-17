@@ -7,7 +7,6 @@
   width: 100%;
 }
 
-
 .footer-details {
   display: flex;
   flex-direction: row;
@@ -25,6 +24,7 @@
   width: 100%;
   background-color: white;
   border-bottom: 1px solid grey;
+  min-width: 500px;
 }
 
 
@@ -55,10 +55,22 @@
   height: 40px;
   width: 40px;
   cursor: pointer;
+  margin-left: 170px;
 }
 
 .profile-pic:hover {
   transform: scale(1.2);
+}
+
+.upload-pic {
+  height: 40px;
+  width: 40px;
+  margin-left: 95px;
+  cursor: pointer;
+}
+
+.upload-pic:hover {
+  transform:scale(1.2);
 }
 
 .logout-pic {
@@ -76,6 +88,7 @@
 .logo {
   height: 40px;
   width: 40px;
+  margin-left: 40px;
 }
 
 .linked-img {
@@ -88,4 +101,10 @@
   height: 30px;
   width: 30px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 660px) {
+  .header-details {
+    justify-content: space-around;
+  }
 }

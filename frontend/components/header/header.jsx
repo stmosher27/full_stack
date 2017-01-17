@@ -39,6 +39,9 @@ class Header extends React.Component {
           <a id="profile" onClick={this.viewProfile}><img className="profile-pic" src="https://maxcdn.icons8.com/Share/icon/Users//user_male_circle_filled1600.png" alt="profile" /></a>
         </div>
         <div className="header-details">
+          <a onClick={this.uploadPost}><img className="upload-pic" src="https://image.freepik.com/free-icon/upload-file-ios-7-interface-symbol_318-33627.jpg" alt="upload" /></a>
+        </div>
+        <div className="header-details">
           <a id="logout" onClick={this.handleSubmit}><img className="logout-pic" src="http://imageog.flaticon.com/icons/png/512/32/32567.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" alt="logout"/></a>
         </div>
 
