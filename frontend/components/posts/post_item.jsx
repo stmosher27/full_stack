@@ -46,7 +46,7 @@ class PostItem extends React.Component {
         <div className="likes">
           <input type="submit" onClick={this.toggleLike} className="like-logo" value='❤️'/>
           <h4 className="like-nums">{this.props.post.likes.length}</h4>
-          <h4 className="likes">Likes</h4>
+          <h4 className="likes-word">Likes</h4>
         </div>
         <div className="post-desc">
           <h3>{this.props.post.description}</h3>

@@ -27,8 +27,18 @@
   width: 400px;
 }
 
-.like-logo {
+.likes {
+  justify-content: flex-start;
+  margin: 5px 0 0 10px;
+  font-size: 14px;
+}
 
+.like-nums {
+  margin:0 5px 0 5px;
+  font-weight: bold;
+}
+
+.like-logo {
   border: none;
   background-color: white;
 }

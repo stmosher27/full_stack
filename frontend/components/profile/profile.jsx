@@ -59,6 +59,9 @@ class Profile extends React.Component {
               <Header logout={this.props.logout}/>
               <div className="profile-username">
                 {this.props.user.username}
+                <div className="follow">
+                  <button className="follow-button" >Follow</button>
+                </div>
               </div>
               <div className="profile-details">
                 <label className="details"># of posts</label>
