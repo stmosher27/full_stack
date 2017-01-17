@@ -1,4 +1,5 @@
 import { RECEIVE_USER } from '../actions/user_actions';
+import { CREATE_FOLLOW, DELETE_FOLLOW } from '../actions/follow_actions';
 
 import merge from 'lodash/merge';
 

@@ -7,6 +7,8 @@ class Profile extends React.Component {
     super(props);
 
     this.userPictures = this.userPictures.bind(this);
+    this.toggleFollow = this.toggleFollow.bind(this);
+    this.followButton = this.followButton.bind(this);
   }
 
   componentWillMount() {
@@ -28,6 +30,51 @@ class Profile extends React.Component {
     }
   }
 
+  followButton() {
+    let flag = false;
+    const that = this;
+    this.props.user.followers.map((follow, idx) => {
+      if (that.props.user.followers[idx].follower_id === that.props.currentUser.id){
+        flag = true;
+      }
+    });
+    if (flag === true) {
+      return(
+        <div className="unfollow-button-text">
+          Unfollow
+        </div>
+      );
+    } else {
+      return(
+        <div className="follow-button-text">
+          Follow
+        </div>
+      );
+    }
+  }
+
+  toggleFollow(e) {
+    e.preventDefault();
+    let userFollowers = this.props.user.followers;
+    let currUserFollowings = this.props.currentUser.followings;
+    let flag = false;
+    const that = this;
+    (userFollowers).map((follow, idx) => {
+      if (that.props.user.followers[idx].follower_id === that.props.currentUser.id){
+        that.props.unfollow(that.props.user.id).then(
+          that.props.fetchUser(that.props.user.id)
+
+        );
+        flag = true;
+      }
+    });
+    if (flag === false){
+      that.props.follow(that.props.user.id).then(
+        that.props.fetchUser(that.props.user.id)
+      );
+    }
+  }
+
   render() {
     if (this.props.currentUser) {
       if (this.props.currentUser.id == this.props.params.userId) {
@@ -39,9 +86,9 @@ class Profile extends React.Component {
                 {this.props.currentUser.username}
               </div>
               <div className="profile-details">
-                <label className="details"># of posts</label>
-                <label className="details-after"># of followers</label>
-                <label className="details-after"># of following</label>
+                <label className="details">{this.props.currentUser.posts.length} posts</label>
+                <label className="details-after">{this.props.currentUser.followers.length} followers</label>
+                <label className="details-after">{this.props.currentUser.followings.length} following</label>
               </div>
               <div className="profile-name">
                 {this.props.currentUser.name}
@@ -53,30 +100,38 @@ class Profile extends React.Component {
           </div>
         );
       } else {
-        return(
-          <div className = "profile-page">
-            <div className="prof-info">
-              <Header logout={this.props.logout}/>
-              <div className="profile-username">
-                {this.props.user.username}
-                <div className="follow">
-                  <button className="follow-button" >Follow</button>
+        if (this.props.user.followers) {
+          return(
+            <div className = "profile-page">
+              <div className="prof-info">
+                <Header logout={this.props.logout}/>
+                <div className="profile-username">
+                  {this.props.user.username}
+                  <div className="follow">
+                    <button onClick={this.toggleFollow} className="follow-button" >{this.followButton()}</button>
+                  </div>
+                </div>
+                <div className="profile-details">
+                  <label className="details">{this.props.user.posts.length} posts</label>
+                  <label className="details-after">{this.props.user.followers.length} followers</label>
+                  <label className="details-after">{this.props.user.followings.length} following</label>
+                </div>
+                <div className="profile-name">
+                  {this.props.user.name}
                 </div>
               </div>
-              <div className="profile-details">
-                <label className="details"># of posts</label>
-                <label className="details-after"># of followers</label>
-                <label className="details-after"># of following</label>
-              </div>
-              <div className="profile-name">
-                {this.props.user.name}
+              <div className="user-pics">
+                {this.userPictures()}
               </div>
             </div>
-            <div className="user-pics">
-              {this.userPictures()}
+          );
+        } else {
+          return(
+            <div>
+
             </div>
-          </div>
-        );
+          );
+        }
       }
     } else {
       return(
