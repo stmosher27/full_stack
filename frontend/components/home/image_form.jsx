@@ -25,7 +25,7 @@ class ImageForm extends React.Component {
   render() {
     return(
       <div className="photo-upload-form">
-        <button onClick={this.upload}>Upload Image!</button>
+        <a onClick={this.upload}><img className="upload-pic" src="https://image.freepik.com/free-icon/upload-file-ios-7-interface-symbol_318-33627.jpg" alt="upload" /></a>
       </div>
     );
   }

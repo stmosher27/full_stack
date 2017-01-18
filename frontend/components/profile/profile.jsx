@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import Header from '../header/header';
+import Modal from 'react-modal';
+import ProfileItem from './profile_item';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -13,17 +15,21 @@ class Profile extends React.Component {
 
   componentWillMount() {
     this.props.fetchUser(this.props.params.userId);
-    this.props.fetchAllPosts();
+  }
+
+  componentWillUpdate(nextProps) {
+    if (nextProps.params.userId !== this.props.params.userId) {
+      this.props.fetchUser(nextProps.params.userId);
+    }
   }
 
   userPictures() {
     if (this.props.user.id) {
-      this.props.fetchUser(this.props.params.userId);
       return(
           <ul className="user-pics">
             {this.props.user.posts.map(post => (
               <li key={post.id}>
-                  <img src={post.img_url} />
+                <ProfileItem post={post}/>
               </li>
             ))}
         </ul>

@@ -8,27 +8,39 @@ class Posts extends React.Component {
     super(props);
 
     this.showPosts = this.showPosts.bind(this);
+    this.choosePosts = this.choosePosts.bind(this);
   }
 
   componentWillMount() {
     this.props.fetchAllPosts();
   }
 
+  choosePosts(post) {
+    let followingsIds = [];
+    let followings = this.props.currentUser.followings;
+    followings.forEach((obj) => {
+      followingsIds.push(obj.followed_id);
+    });
+    if ($.inArray(post.author_id, followingsIds) !== -1 || post.author_id === this.props.currentUser.id) {
+      return(
+        <div key={post.id}>
+          <PostItem post={post}
+            like={this.props.like}
+            unlike={this.props.unlike}
+            fetchAllPosts={this.props.fetchAllPosts}
+            currUser={this.props.currentUser}/>
+        </div>
+      );
+    }
+  }
+
   showPosts() {
       return(
         <div className="all-posts">
-          {this.props.posts.reverse().map(post => (
-            <div key={post.id}>
-              <PostItem post={post}
-                like={this.props.like}
-                unlike={this.props.unlike}
-                fetchAllPosts={this.props.fetchAllPosts}
-                currUser={this.props.currentUser}/>
-            </div>
-            // <div className="post-comments">thi
-            //   <CommentContainer />
-            // </div>
-          ))}
+          {this.props.posts.reverse().map(post => {
+            return this.choosePosts(post);
+          }
+          )}
         </div>
     );
   }
