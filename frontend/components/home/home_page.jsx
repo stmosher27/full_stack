@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import Header from '../header/header';
+import HeaderContainer from '../header/header_container';
 import PostsContainer from '../posts/posts_container';
 
 class HomePage extends React.Component {
@@ -12,7 +12,7 @@ class HomePage extends React.Component {
     if (this.props.currentUser) {
       return(
         <div className="posts">
-          <Header logout={this.props.logout} currentUser={this.props.currentUser}/>
+          <HeaderContainer />
           <PostsContainer />
         </div>
       );

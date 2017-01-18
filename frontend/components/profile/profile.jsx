@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import Header from '../header/header';
+import HeaderContainer from '../header/header_container';
 import Modal from 'react-modal';
 import ProfileItem from './profile_item';
 
@@ -88,7 +88,7 @@ class Profile extends React.Component {
         return(
           <div className="profile-page">
             <div className="prof-info">
-              <Header logout={this.props.logout} />
+              <HeaderContainer />
               <div className="profile-username">
                 {this.props.currentUser.username}
               </div>
@@ -111,7 +111,7 @@ class Profile extends React.Component {
           return(
             <div className = "profile-page">
               <div className="prof-info">
-                <Header logout={this.props.logout} currentUser={this.props.currentUser}/>
+                <HeaderContainer />
                 <div className="profile-username">
                   {this.props.user.username}
                   <div className="follow">
