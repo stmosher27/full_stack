@@ -97,7 +97,7 @@ class Header extends React.Component {
           </Modal>
         </div>
         <div className="header-details">
-          <a id="logout" onClick={this.handleForm}><img className="logout-pic" src="http://imageog.flaticon.com/icons/png/512/32/32567.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" alt="logout"/></a>
+          <a id="logout" onClick={this.handleSubmit}><img className="logout-pic" src="http://imageog.flaticon.com/icons/png/512/32/32567.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" alt="logout"/></a>
 
         </div>
 
