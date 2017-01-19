@@ -29,7 +29,6 @@ class PostItem extends React.Component {
         this.props.fetchAllPosts(this.props.post.id)
       );
     }
-
   }
 
   showComments() {
@@ -38,7 +37,7 @@ class PostItem extends React.Component {
       this.props.post.comments.reverse().forEach(comment => {
         if (commentList.length >= 5)
           return;
-        commentList.push(<li key={comment.id}><CommentItem comment={comment} /></li>);
+        commentList.push(<li className="single-comment" key={comment.id}><CommentItem comment={comment} /></li>);
       });
     }
     return commentList;
@@ -46,27 +45,34 @@ class PostItem extends React.Component {
 
   render() {
     const user_profile_url = `/user/${this.props.post.author_id}`;
+    const likes = this.props.post.likes;
+    const likesUserId = Object.keys(likes).map(id => likes[id].user_id);
+    const userLiked = (likesUserId.includes(this.props.currUser.id));
+    let heartColor;
+    if (userLiked) {
+      heartColor = 'red';
+    } else {
+      heartColor = 'lightgray';
+    }
     return(
       <li key={this.props.post.id} className="single-post">
         <label className="post-label">
-          <div className="profile-link">
-            <Link to={user_profile_url} >{this.props.post.username}</Link>
-          </div>
-          <div>
+            <Link className="profile-link" to={user_profile_url} >{this.props.post.username}</Link>
+          <div className="posted-at">
             {this.props.post.published}
           </div>
         </label>
         <img className="post-img" src={this.props.post.img_url} alt="Post Pic" />
         <div className="likes">
-          <input type="submit" onClick={this.toggleLike} className="like-logo" value='❤️'/>
+          <input type="submit" onClick={this.toggleLike} className="like-logo" value={heartColor}/>
           <h4 className="like-nums">{this.props.post.likes.length}</h4>
           <h4 className="likes-word">Likes</h4>
         </div>
         <div className="post-desc">
-          <Link to={user_profile_url} >{this.props.post.username}</Link>
+          <Link className="description-link" to={user_profile_url} >{this.props.post.username}</Link>
           <h3 className="description-post">{this.props.post.description}</h3>
         </div>
-        <ul>
+        <ul className="comments">
           {this.showComments()}
         </ul>
         <CommentFormContainer post={this.props.post} currentUser={this.props.currUser}/>

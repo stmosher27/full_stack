@@ -1,3 +1,25 @@
 // Place all the styles related to the api/likes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.likes {
+  justify-content: flex-start;
+  margin: 5px 0 0 10px;
+  font-size: 14px;
+}
+
+.like-nums {
+  margin:0 5px 0 5px;
+  font-weight: bold;
+}
+
+.likes-word {
+  margin-top: 2px;
+  font-size: 12px;
+}
+
+.like-logo {
+  border: none;
+  background-color: white;
+}

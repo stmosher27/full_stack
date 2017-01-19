@@ -11,15 +11,6 @@ class CommentForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  //
-  // componentWillUpdate(nextProps) {
-  //   debugger
-  //   if (nextProps.params.userId !== this.props.params.userId) {
-  //     this.props.fetchUser(nextProps.params.userId);
-  //   }
-  // }
-
-
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -45,8 +36,8 @@ class CommentForm extends React.Component {
                    placeholder="Comment"
                    value={this.state.body}
                    onChange={this.update("body")}
-                   className="comment-body"/>
-            <input type="submit" value="Create Comment" />
+                   className="comment-textarea"/>
+           <input className="comment-submit" type="submit" value="Comment" />
           </div>
         </form>
       </div>

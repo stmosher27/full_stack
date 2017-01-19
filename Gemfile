@@ -23,12 +23,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~>c3.1.7'
 
 gem 'annotate'
 gem 'pry-rails'
 
 gem 'cloudinary'
+
+gem 'font-awesome-sass', '~> 4.7.0'
 
 
 # Use Unicorn as the app server

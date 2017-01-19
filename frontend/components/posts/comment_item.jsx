@@ -13,8 +13,8 @@ class CommentItem extends React.Component {
     const user_profile_url = `/user/${this.props.comment.user_id}`;
     return(
       <div className="single-comment">
-        <Link to={user_profile_url} >{this.props.comment.username}</Link>
-          {this.props.comment.body}
+        <Link className="comment-link" to={user_profile_url} >{this.props.comment.username}</Link>
+          <h3 className="comment-body">{this.props.comment.body}</h3>
       </div>
     );
   }

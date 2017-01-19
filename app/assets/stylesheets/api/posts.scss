@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.posts {
+  margin: auto;
+}
 .all-posts {
   margin: 90px 0 70px 0;
   display: flex;
@@ -22,25 +25,33 @@
   margin-top: 50px;
   border: 1px solid #DCDCDC;
 }
+
+.profile-link {
+  text-decoration: none;
+  margin: 5px 0 5px 15px;
+  font-weight: bold
+}
+
+.description-link {
+  text-decoration: none;
+  font-weight: bold;
+  margin: 5px 10px 0 0;
+}
+
+.description-post {
+  margin: 5px 10px 0 0;
+  font-size: 15px;
+  width: 500px;
+}
+
+.posted-at {
+  font-size: 14px;
+  margin: 8px 5px 0 0;
+}
+
 .post-img {
   height: 400px;
-  width: 400px;
-}
-
-.likes {
-  justify-content: flex-start;
-  margin: 5px 0 0 10px;
-  font-size: 14px;
-}
-
-.like-nums {
-  margin:0 5px 0 5px;
-  font-weight: bold;
-}
-
-.like-logo {
-  border: none;
-  background-color: white;
+  width: 600px;
 }
 
 .post-desc {

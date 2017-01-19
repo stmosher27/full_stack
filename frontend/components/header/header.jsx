@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 import NewPostForm from './new_post_form';
 import Modal from 'react-modal';
 import ImageForm from '../home/image_form';
+import ModalStyle from './modal_style';
 
 class Header extends React.Component {
   constructor(props) {
@@ -127,9 +128,11 @@ class Header extends React.Component {
           <Modal
             contentLabel=''
             isOpen={this.state.modalOpen}
-            onRequestClose={this.closeModal}>
+            onRequestClose={this.closeModal}
+            style={ModalStyle}>
 
             <div className='modal-top'>
+              <h2 className="title">New Post</h2>
               <form onSubmit={this.handleForm} >
                 <input type="text"
                   onChange={this.update('description')}
@@ -137,7 +140,6 @@ class Header extends React.Component {
                 <ImageForm processImage={this.processImage}/>
                 <input type="submit" className="new-post-button" value="Create Post" />
               </form>
-              <p><button onClick={this.closeModal}>close</button></p>
             </div>
           </Modal>
         </div>

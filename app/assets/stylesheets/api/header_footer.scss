@@ -1,6 +1,6 @@
 
 .footer {
-  position: fixed;
+  position: relative;;
   left: 0;
   bottom: 0;
   height: 40px;
@@ -108,4 +108,8 @@
   .header-details {
     justify-content: space-around;
   }
+}
+
+.modal-top {
+
 }
