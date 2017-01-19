@@ -7,7 +7,13 @@ class Comments extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
-    this.props.fetchComments();
+
+  render() {
+    return(
+      <div>
+        hello
+      </div>
+    );
   }
+
 }

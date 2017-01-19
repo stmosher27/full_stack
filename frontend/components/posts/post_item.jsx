@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import merge from 'lodash/merge';
+import CommentItem from './comment_item';
+import CommentFormContainer from './comment_form_container';
 
 class PostItem extends React.Component {
   constructor(props) {
     super(props);
 
     this.toggleLike = this.toggleLike.bind(this);
+    this.showComments = this.showComments.bind(this);
   }
 
   toggleLike(e) {
@@ -29,10 +32,22 @@ class PostItem extends React.Component {
 
   }
 
+  showComments() {
+    let commentList = [];
+    if (this.props.post.comments) {
+      this.props.post.comments.reverse().forEach(comment => {
+        if (commentList.length >= 5)
+          return;
+        commentList.push(<li key={comment.id}><CommentItem comment={comment} /></li>);
+      });
+    }
+    return commentList;
+  }
+
   render() {
     const user_profile_url = `/user/${this.props.post.author_id}`;
     return(
-      <li className="single-post">
+      <li key={this.props.post.id} className="single-post">
         <label className="post-label">
           <div className="profile-link">
             <Link to={user_profile_url} >{this.props.post.username}</Link>
@@ -48,8 +63,13 @@ class PostItem extends React.Component {
           <h4 className="likes-word">Likes</h4>
         </div>
         <div className="post-desc">
-          <h3>{this.props.post.description}</h3>
+          <Link to={user_profile_url} >{this.props.post.username}</Link>
+          <h3 className="description-post">{this.props.post.description}</h3>
         </div>
+        <ul>
+          {this.showComments()}
+        </ul>
+        <CommentFormContainer post={this.props.post} currentUser={this.props.currUser}/>
       </li>
     );
   }

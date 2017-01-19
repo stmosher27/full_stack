@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Comments from './comments';
-import { fetchComments } from '../../action/comment_actions';
+import { fetchComments } from '../../actions/comment_actions';
 
 const mapStateToProps = state => ({
   comments: Object.keys(state.comments).map(id => state.comments[id]),

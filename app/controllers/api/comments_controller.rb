@@ -1,8 +1,16 @@
 class Api::CommentsController < ApplicationController
+  def index
+    @comments = Comment.all
+  end
+
+  def show
+
+  end
+
   def create
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
-    @commment.save
+    @comment.save
     @post = Post.find_by(id: params[:comment][:post_id])
     render "api/posts/show"
   end
@@ -17,6 +25,6 @@ class Api::CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:post_id, :body)
+    params.require(:comment).permit(:post_id, :user_id, :body)
   end
 end

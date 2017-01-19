@@ -18,18 +18,20 @@ class Posts extends React.Component {
   choosePosts(post) {
     let followingsIds = [];
     let followings = this.props.currentUser.followings;
-    followings.forEach((obj) => {
-      followingsIds.push(obj.followed_id);
-    });
+    if (followings) {
+      followings.forEach((obj) => {
+        followingsIds.push(obj.followed_id);
+      });
+    }
     if ($.inArray(post.author_id, followingsIds) !== -1 || post.author_id === this.props.currentUser.id) {
       return(
-        <div key={post.id}>
+        <ul >
           <PostItem post={post}
             like={this.props.like}
             unlike={this.props.unlike}
             fetchAllPosts={this.props.fetchAllPosts}
             currUser={this.props.currentUser}/>
-        </div>
+        </ul>
       );
     }
   }

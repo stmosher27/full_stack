@@ -83,8 +83,20 @@ class Profile extends React.Component {
   }
 
   render() {
+    let numPosts = 0;
+    let numFollowers = 0;
+    let numFollowings = 0;
     if (this.props.currentUser) {
       if (this.props.currentUser.id == this.props.params.userId) {
+        if (this.props.user.posts) {
+          numPosts = this.props.user.posts.length;
+        }
+        if (this.props.user.followers) {
+          numFollowers = this.props.user.followers.length;
+        }
+        if (this.props.user.followings) {
+          numFollowings = this.props.user.followings.length;
+        }
         return(
           <div className="profile-page">
             <div className="prof-info">
@@ -93,9 +105,9 @@ class Profile extends React.Component {
                 {this.props.currentUser.username}
               </div>
               <div className="profile-details">
-                <label className="details">{this.props.currentUser.posts.length} posts</label>
-                <label className="details-after">{this.props.currentUser.followers.length} followers</label>
-                <label className="details-after">{this.props.currentUser.followings.length} following</label>
+                <label className="details">{numPosts} posts</label>
+                <label className="details-after">{numFollowers} followers</label>
+                <label className="details-after">{numFollowings} following</label>
               </div>
               <div className="profile-name">
                 {this.props.currentUser.name}
@@ -108,6 +120,15 @@ class Profile extends React.Component {
         );
       } else {
         if (this.props.user.followers) {
+          if (this.props.user.posts) {
+            numPosts = this.props.user.posts.length;
+          }
+          if (this.props.user.followers) {
+            numFollowers = this.props.user.followers.length;
+          }
+          if (this.props.user.followings) {
+            numFollowings = this.props.user.followings.length;
+          }
           return(
             <div className = "profile-page">
               <div className="prof-info">
@@ -119,9 +140,9 @@ class Profile extends React.Component {
                   </div>
                 </div>
                 <div className="profile-details">
-                  <label className="details">{this.props.user.posts.length} posts</label>
-                  <label className="details-after">{this.props.user.followers.length} followers</label>
-                  <label className="details-after">{this.props.user.followings.length} following</label>
+                  <label className="details">{numPosts} posts</label>
+                  <label className="details-after">{numFollowers} followers</label>
+                  <label className="details-after">{numFollowings} following</label>
                 </div>
                 <div className="profile-name">
                   {this.props.user.name}
