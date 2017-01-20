@@ -11,9 +11,6 @@ json.array! @posts do |post|
       json.post_id comment.post_id
     end
   end
-  # json.array! post.comments do |comment|
-  #   json.comment_username comment.author.username
-  # end
   json.published time_ago_in_words(post.created_at)
 
 end

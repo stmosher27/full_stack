@@ -10,6 +10,7 @@ class PostItem extends React.Component {
 
     this.toggleLike = this.toggleLike.bind(this);
     this.showComments = this.showComments.bind(this);
+    this.chooseHeart = this.chooseHeart.bind(this);
   }
 
   toggleLike(e) {
@@ -43,17 +44,24 @@ class PostItem extends React.Component {
     return commentList;
   }
 
-  render() {
-    const user_profile_url = `/user/${this.props.post.author_id}`;
+  chooseHeart() {
     const likes = this.props.post.likes;
     const likesUserId = Object.keys(likes).map(id => likes[id].user_id);
     const userLiked = (likesUserId.includes(this.props.currUser.id));
-    let heartColor;
+    let heart;
     if (userLiked) {
-      heartColor = 'red';
+      return(
+        <input className="like-button" type="submit" onClick={this.toggleLike} value='❤️'/>
+      );
     } else {
-      heartColor = 'lightgray';
+      return(
+        <input className="like-button" type="submit" onClick={this.toggleLike} value='💔'/>
+      );
     }
+  }
+
+  render() {
+    const user_profile_url = `/user/${this.props.post.author_id}`;
     return(
       <li key={this.props.post.id} className="single-post">
         <label className="post-label">
@@ -64,7 +72,7 @@ class PostItem extends React.Component {
         </label>
         <img className="post-img" src={this.props.post.img_url} alt="Post Pic" />
         <div className="likes">
-          <input type="submit" onClick={this.toggleLike} className="like-logo" value={heartColor}/>
+          {this.chooseHeart()}
           <h4 className="like-nums">{this.props.post.likes.length}</h4>
           <h4 className="likes-word">Likes</h4>
         </div>

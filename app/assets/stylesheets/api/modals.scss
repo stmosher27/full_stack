@@ -1,0 +1,106 @@
+.modal-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.modal-title {
+  margin-top: 20px;
+  font-size: 35px;
+  color: #1E90FF;
+  border-bottom: 1px solid grey;
+}
+
+.photo-upload-form {
+  margin-top: 50px;
+}
+
+.upload-button {
+  background-color: #1E90FF;
+  color: white;
+  border: none;
+}
+
+.modal-description {
+  margin: 30px 0 30px 0;
+  resize: none;
+  border: 1px solid #1E90FF;
+}
+
+.new-post-create {
+  margin: auto;
+}
+
+.new-post-button {
+  background-color: #1E90FF;
+  color: white;
+  border: none;
+}
+
+.modal-top-profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-top-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.profile-post-label{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.profile-profile-link {
+  text-decoration: none;
+  margin: 5px 0 5px 70px;
+  font-weight: bold
+}
+
+.profile-pictures {
+  margin-top: 20px;
+  margin-left: 40px;
+  height: 270px;
+  width: 500px;
+}
+
+.profile-posted-at {
+  margin-right: 120px;
+  margin-top: 6px;
+}
+
+.profile-likes {
+  justify-content: flex-start;
+  margin: 5px 0 0 60px;
+  font-size: 14px;
+}
+
+.profile-post-desc {
+  justify-content: flex-start;
+  margin: 20px 0 20px 10px;
+}
+
+.profile-description-link {
+  text-decoration: none;
+  font-weight: bold;
+  margin: 5px 10px 0 55px;
+}
+
+.profile-description-post {
+  margin: 7px 10px 0 0;
+  font-size: 15px;
+  width: 500px;
+}
+
+.profile-comments {
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+  width: 450px;
+}
+
+.profile-comment-body {
+  width: 100%;
+}

@@ -25,7 +25,7 @@ class ImageForm extends React.Component {
   render() {
     return(
       <div className="photo-upload-form">
-        <button onClick={this.upload}>Upload Image</button>
+        <button className="upload-button" onClick={this.upload}>Upload Image</button>
       </div>
     );
   }

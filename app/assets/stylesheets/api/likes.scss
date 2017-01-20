@@ -10,16 +10,21 @@
 }
 
 .like-nums {
-  margin:0 5px 0 5px;
+  margin: 10px 5px 0 5px;
   font-weight: bold;
 }
 
 .likes-word {
-  margin-top: 2px;
+  margin-top: 12px;
   font-size: 12px;
 }
 
-.like-logo {
+
+.like-button {
+  cursor: pointer;
+  font-size: 35px;
+  height: 40px;
   border: none;
+  outline: none;
   background-color: white;
 }

@@ -1,6 +1,7 @@
 
 .footer {
-  position: relative;;
+  margin-top: 20px;
+  position: relative;
   left: 0;
   bottom: 0;
   height: 40px;
@@ -52,44 +53,70 @@
   border: none;
 }
 
+.search-bar {
+  margin: auto 15% auto 0;
+  margin-top: 20px;
+}
+
+.search-bar input {
+  background-color: #F0F8FF;
+}
+
+.search-bar-results {
+
+  background-color: white;
+  border: 1px solid black;
+}
+
+.click-button {
+  display: flex;
+  width: 170px;
+  justify-content: space-between;
+  text-align: center;
+}
+
 .profile-pic {
-  height: 40px;
-  width: 40px;
+  height: 25px;
+  width: 25px;
   cursor: pointer;
-  margin-left: 170px;
 }
 
 .profile-pic:hover {
-  transform: scale(1.2);
+  transform: scale(1.4);
 }
 
 .upload-pic {
-  height: 40px;
-  width: 40px;
-  margin-left: 95px;
+  height: 25px;
+  width: 25px;
+  margin-bottom: 3px;
   cursor: pointer;
 }
 
 .upload-pic:hover {
-  transform:scale(1.2);
+  transform:scale(1.4);
 }
 
 .logout-pic {
-  height: 40px;
-  width: 60px;
+  height: 25px;
+  width: 40px;
   background: transparent;
   border: 1px solid white;
   cursor: pointer;
 }
 
+.search-result:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
 .logout-pic:hover {
-  transform: scale(1.2);
+  transform: scale(1.4);
 }
 
 .logo {
   height: 40px;
   width: 40px;
-  margin-left: 40px;
+  margin-left: 60px;
 }
 
 .linked-img {
@@ -108,8 +135,4 @@
   .header-details {
     justify-content: space-around;
   }
-}
-
-.modal-top {
-
 }

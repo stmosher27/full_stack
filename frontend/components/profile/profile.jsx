@@ -25,11 +25,11 @@ class Profile extends React.Component {
 
   userPictures() {
     if (this.props.user.id) {
-      return(
+        return(
           <ul className="user-pics">
             {this.props.user.posts.map(post => (
               <li key={post.id}>
-                <ProfileItem post={post}/>
+                <ProfileItem post={post} user={this.props.user.username}/>
               </li>
             ))}
         </ul>

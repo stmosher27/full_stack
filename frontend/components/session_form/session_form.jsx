@@ -35,7 +35,8 @@ class SessionForm extends React.Component {
 		e.preventDefault();
 		const user = this.state;
 		this.props.processForm(user).then(
-      () => this.props.router.push('/home'));
+      () => this.props.router.push('/home')
+			);
 	}
 
 	guestLogin(e) {

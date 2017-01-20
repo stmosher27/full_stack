@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { login, logout,
   signup, clearErrors } from '../../actions/session_actions';
+import { fetchAllPosts } from '../../actions/post_actions';
 import SessionForm from './session_form';
 
 
@@ -16,6 +17,7 @@ const mapDispatchToProps = (dispatch, { location }) => {
   return {
     processForm: user => dispatch(processForm(user)),
     clearErrors: () => dispatch(clearErrors()),
+    fetchAllPosts: () => dispatch(fetchAllPosts()),
     formType
   };
 };
