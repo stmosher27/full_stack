@@ -152,6 +152,7 @@ class Header extends React.Component {
                 <form onSubmit={this.handleForm} >
                   <ImageForm processImage={this.processImage}/>
                   <textarea className="modal-description"
+                    required
                     onChange={this.update('description')}
                     placeholder='Description' />
                   <div className="new-post-create">

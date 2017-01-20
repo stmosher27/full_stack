@@ -52,15 +52,17 @@ class SessionForm extends React.Component {
 
 
 	renderErrors() {
-		return(
-			<ul>
-				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>
-						{error}
-					</li>
-				))}
-			</ul>
-		);
+		if (this.props.errors) {
+			return(
+				<ul>
+					{this.props.errors.map((error, i) => (
+						<li key={`error-${i}`}>
+							{error}
+						</li>
+					))}
+				</ul>
+			);
+		}
 	}
 
 	render() {
@@ -110,24 +112,28 @@ class SessionForm extends React.Component {
 								</p>
 								<br/>
 									<input type="text"
+										required
 										placeholder="Email"
 										value={this.state.email}
 										onChange={this.update("email")}
 										className="login-input" />
 								<br/>
 		              <input type="text"
+										required
 										placeholder="username"
 										value={this.state.username}
 										onChange={this.update("username")}
 										className="login-input" />
 								  <br/>
 		                <input type="name"
+											required
 		  								placeholder="Full name"
 		  								value={this.state.name}
 		  								onChange={this.update("name")}
 		  								className="login-input" />
 		  						<br/>
 									<input type="password"
+										required
 										placeholder="Password"
 										value={this.state.password}
 										onChange={this.update("password")}
