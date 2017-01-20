@@ -14,7 +14,7 @@ class NewPostForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
+
   }
 
   openModal() {
@@ -22,7 +22,7 @@ class NewPostForm extends React.Component {
   }
 
   closeModal() {
-    this.setState({ modalOpen: false });
+    this.setState({ modalOpen: false }, () => this.props.fetchAllPosts());
   }
 
   update(field) {
@@ -32,6 +32,7 @@ class NewPostForm extends React.Component {
   }
 
   render() {
+    debugger
     return(
       <div className='new-post-form'>
         <Modal

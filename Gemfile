@@ -32,6 +32,8 @@ gem 'cloudinary'
 
 gem 'font-awesome-sass', '~> 4.7.0'
 
+gem 'faker'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'

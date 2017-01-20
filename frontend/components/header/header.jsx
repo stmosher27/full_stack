@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import NewPostForm from './new_post_form';
+import NewPostFormContainer from './new_post_form_container';
 import Modal from 'react-modal';
 import ImageForm from '../home/image_form';
 import ModalStyle from './modal_style';
@@ -82,12 +82,16 @@ class Header extends React.Component {
 
   handleForm(e) {
     e.preventDefault();
+    const that = this;
     const post = {
       author_id: this.props.currentUser.id,
       img_url: this.state.img[0].secure_url,
       description: this.state.description
     };
-    this.props.newPost(post);
+    this.props.newPost(post).then(
+
+      () => {debugger; that.props.fetchAllPosts()}
+    );
     this.closeModal();
   }
 
