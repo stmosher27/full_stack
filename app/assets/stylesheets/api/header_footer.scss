@@ -54,16 +54,18 @@
 }
 
 .search-bar {
-  margin: auto 15% auto 0;
-  margin-top: 20px;
+  margin: 20px 15% auto 0;
+
 }
 
 .search-bar input {
+  padding: 3px;
   background-color: #F0F8FF;
 }
 
 .search-bar-results {
-
+  position: absolute;
+  padding: 3px;
   background-color: white;
   border: 1px solid black;
 }
