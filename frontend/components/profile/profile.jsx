@@ -25,6 +25,13 @@ class Profile extends React.Component {
 
   userPictures() {
     if (this.props.user.id) {
+      if (this.props.posts.length === 0) {
+        return(
+          <div className='user-pics'>
+            No Uploads Yet!
+          </div>
+        );
+      } else {
         return(
           <ul className="user-pics">
             {this.props.user.posts.reverse().map(post => (
@@ -33,7 +40,7 @@ class Profile extends React.Component {
               </li>
             ))}
         </ul>
-      );
+      );}
     }
   }
 

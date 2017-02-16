@@ -77,7 +77,7 @@ class SessionForm extends React.Component {
 							<label className="title">Trailgram</label>
 							<br/>
 								<input type="text"
-									placeholder="username"
+									placeholder="Username"
 									value={this.state.username}
 									onChange={this.update("username")}
 									className="login-input" />

@@ -134,6 +134,7 @@ class Header extends React.Component {
           <label onClick={this.viewHome} className="header-title">Trailgram</label>
         </div>
         <section className='search-bar'>
+          <div className='search-logo'>🔎</div>
           <section className='search-icon-container'>
             <input type='text' value={this.state.search} placeholder='Search User' onChange={this.updateSearch}></input>
           </section>
