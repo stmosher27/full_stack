@@ -1,7 +1,10 @@
 
 .footer {
   margin-top: 20px;
-  position: relative;
+  position: fixed;
+  background-color: white;
+  border-top: 1px solid grey;
+  padding-top: 10px;
   left: 0;
   bottom: 0;
   height: 40px;

@@ -55,7 +55,7 @@ class PostItem extends React.Component {
       );
     } else {
       return(
-        <input className="like-button" type="submit" onClick={this.toggleLike} value='💔'/>
+        <input className="like-button" type="submit" onClick={this.toggleLike} value='♡'/>
       );
     }
   }
