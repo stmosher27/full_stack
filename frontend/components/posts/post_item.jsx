@@ -35,10 +35,10 @@ class PostItem extends React.Component {
   showComments() {
     let commentList = [];
     if (this.props.post.comments) {
-      this.props.post.comments.reverse().forEach(comment => {
+      this.props.post.comments.slice(Math.max(this.props.post.comments.length - 5, 1)).forEach((comment, i) => {
         if (commentList.length >= 5)
           return;
-        commentList.push(<li className="single-comment" key={comment.id}><CommentItem comment={comment} /></li>);
+        commentList.push(<li className="single-comment" key={`${this.props.post.id}-${i}`}><CommentItem comment={comment} /></li>);
       });
     }
     return commentList;
