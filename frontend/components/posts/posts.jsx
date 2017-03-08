@@ -25,13 +25,12 @@ class Posts extends React.Component {
     }
     if ($.inArray(post.author_id, followingsIds) !== -1 || post.author_id === this.props.currentUser.id) {
       return(
-        <ul >
-          <PostItem post={post}
-            like={this.props.like}
-            unlike={this.props.unlike}
-            fetchAllPosts={this.props.fetchAllPosts}
-            currUser={this.props.currentUser}/>
-        </ul>
+        <PostItem post={post}
+          key={post.id}
+          like={this.props.like}
+          unlike={this.props.unlike}
+          fetchAllPosts={this.props.fetchAllPosts}
+          currUser={this.props.currentUser}/>
       );
     }
   }

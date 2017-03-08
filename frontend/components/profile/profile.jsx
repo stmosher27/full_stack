@@ -15,6 +15,7 @@ class Profile extends React.Component {
 
   componentWillMount() {
     this.props.fetchUser(this.props.params.userId);
+    this.props.fetchAllPosts();
   }
 
   componentWillUpdate(nextProps) {
@@ -24,6 +25,7 @@ class Profile extends React.Component {
   }
 
   userPictures() {
+
     if (this.props.user.id) {
       if (this.props.posts.length === 0) {
         return(
@@ -34,9 +36,9 @@ class Profile extends React.Component {
       } else {
         return(
           <ul className="user-pics">
-            {this.props.user.posts.reverse().map(post => (
-              <li key={post.id}>
-                <ProfileItem post={post} user={this.props.user.username}/>
+            {this.props.user.posts.map((post, i) => (
+              <li key={`${post.id}-${i}`}>
+                <ProfileItem post={post} key={`${this.props.user.id}-profile-${i}`} user={this.props.user.username}/>
               </li>
             ))}
         </ul>

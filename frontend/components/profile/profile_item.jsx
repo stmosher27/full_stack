@@ -31,6 +31,7 @@ class ProfileItem extends React.Component {
 
         <Modal
           contentLabel=''
+          key={`${this.props.user.id}-${this.props.post.id}`}
           isOpen={this.state.modalOpen}
           onRequestClose={this.closeModal}
           style={ModalStyle}>
