@@ -18,7 +18,7 @@ class Header extends React.Component {
     this.goToSearchProfile = this.goToSearchProfile.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.upadate = this.update.bind(this);
-    this.state = { modalOpen: false, img: null, search: ''};
+    this.state = { modalOpen: false, img: null, search: '', timer: null};
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
@@ -30,17 +30,42 @@ class Header extends React.Component {
   }
 
   updateSearch(e) {
-      this.setState({
-        search: e.target.value
-      }, () => {
+      const addTimer = () => {
+        const myTimer = setInterval(() => {
+          const updatedTime = this.state.timer + 1;
+          this.setState({
+            timer: updatedTime
+          });
+          if (this.state.timer >= 3){
+            sendSearch();
+            clearInterval(myTimer);
+          }
+        }, 300);
+      };
+
+    const sendSearch = (() => {
         if (this.state.search.length > 0) {
-          this.props.newSearch(this.state.search)
-            .then(response => console.log(response));
+          this.props.newSearch(this.state.search);
+          this.setState({
+            timer: null
+          });
         } else {
           this.props.clearSearch();
         }
+      });
+
+      if (this.state.timer === null) {
+        this.setState({
+          timer: 0
+        }, addTimer);
+      } else {
+        this.setState({
+          timer: 0
+        });
       }
-    );
+      this.setState({
+        search: e.target.value
+      });
   }
 
   handleSubmit(e) {
