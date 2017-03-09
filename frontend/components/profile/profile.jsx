@@ -79,7 +79,6 @@ class Profile extends React.Component {
       if (that.props.user.followers[idx].follower_id === that.props.currentUser.id){
         that.props.unfollow(that.props.user.id).then(
           that.props.fetchUser(that.props.user.id)
-
         );
         flag = true;
       }
